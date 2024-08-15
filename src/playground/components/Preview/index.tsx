@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react"
 import { PlaygroundContext } from "../../context/PlaygroundContext"
-import Editor from "../CodeEditor/Editor";
 import { compile } from "./compiler";
 import iframeRaw from './iframe.html?raw'
 import { IMPORT_MAP_FILE_NAME } from "../../file";
@@ -22,7 +21,7 @@ export default function Preview() {
       )
       return URL.createObjectURL(new Blob([res], { type: 'text/html' }))
   }
-  
+
     const [iframeUrl, setIframeUrl] = useState(getIframeUrl());
 
     useEffect(() => {

@@ -5,7 +5,7 @@ import FileNameList from "./FileNameList";
 import { PlaygroundContext } from "../../context/PlaygroundContext";
 
 function CodeEditor() {
-  const { files, setFiles, selectedFileName, setSelectedFileName } =
+  const { files, setFiles, selectedFileName } =
     useContext(PlaygroundContext);
 
   const file = files[selectedFileName];

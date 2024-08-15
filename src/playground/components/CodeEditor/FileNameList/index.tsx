@@ -6,9 +6,6 @@ import styles from "./index.module.scss";
 export default function FileNameList() {
   const {
     files,
-    removeFile,
-    addFile,
-    updateFileName,
     selectedFileName,
     setSelectedFileName,
   } = useContext(PlaygroundContext);

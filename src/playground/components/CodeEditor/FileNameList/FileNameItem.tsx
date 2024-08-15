@@ -1,5 +1,5 @@
 import classnames from "classnames";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 
 import styles from "./index.module.scss";
 
@@ -12,7 +12,7 @@ export interface FileNameItemProps {
 export const FileNameItem: React.FC<FileNameItemProps> = (props) => {
   const { value, actived = false, onClick } = props;
 
-  const [name, setName] = useState(value);
+  const [name, ] = useState(value);
 
   return (
     <div
