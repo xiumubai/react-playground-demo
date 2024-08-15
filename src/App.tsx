@@ -1,25 +1,22 @@
-import Editor from '@monaco-editor/react';
+import React from 'react'
 
-function App() {
+import iframeRaw from './iframe.html?raw';
 
-    const code =`import { useEffect, useState } from "react";
+const iframeUrl = URL.createObjectURL(new Blob([iframeRaw], { type: 'text/html' }));
 
-function App() {
-    const [num, setNum] = useState(() => {
-        const num1 = 1 + 2;
-        const num2 = 2 + 3;
-        return num1 + num2
-    });
+const Preview: React.FC = () => {
 
-    return (
-        <div onClick={() => setNum((prevNum) => prevNum + 1)}>{num}</div>
-    );
+  return (
+    <iframe
+        src={iframeUrl}
+        style={{
+            width: '100%',
+            height: '100%',
+            padding: 0,
+            border: 'none'
+        }}
+    />
+  )
 }
 
-export default App;
-`;
-
-    return <Editor height="500px" defaultLanguage="javascript" defaultValue={code} />;
-}
-
-export default App;
+export default Preview;
