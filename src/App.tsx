@@ -1,22 +1,12 @@
-import React from 'react'
+import Playground from "./playground";
+import { PlaygroundProvider } from "./playground/context/PlaygroundContext";
 
-import iframeRaw from './iframe.html?raw';
-
-const iframeUrl = URL.createObjectURL(new Blob([iframeRaw], { type: 'text/html' }));
-
-const Preview: React.FC = () => {
-
+function App() {
   return (
-    <iframe
-        src={iframeUrl}
-        style={{
-            width: '100%',
-            height: '100%',
-            padding: 0,
-            border: 'none'
-        }}
-    />
-  )
+    <PlaygroundProvider>
+      <Playground />
+    </PlaygroundProvider>
+  );
 }
 
-export default Preview;
+export default App;
